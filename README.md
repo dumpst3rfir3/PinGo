@@ -14,7 +14,7 @@ Clone the repo and start the server:
 
 ```
 git clone 
-cd PingGo/server
+cd PinGo/server
 go run server.go 
 ```
 
@@ -26,7 +26,7 @@ You'll probably want to compile it and drop the binary on the "victim"/test clie
 
 ```
 git clone
-cd PingGo/client
+cd PinGo/client
 GOOS=<client_OS> go build .
 
 # E.g., for a Windows client:
