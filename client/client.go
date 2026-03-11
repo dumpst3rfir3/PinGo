@@ -152,6 +152,9 @@ func sendFile(filePath string) error {
 		return err
 	}
 
+	// Packet format: [blockNum uint32][totalBlocks uint32][data...]
+	// Block 0 is the filename packet; blocks 1..N are file data.
+
 	// Send block 0: filename packet
 	if flags.filePath != "" {
 		fileNameToSend = filepath.ToSlash(filepath.Base(filePath))
