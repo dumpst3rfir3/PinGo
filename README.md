@@ -1,8 +1,8 @@
-# PingGo
+# PinGo
 
 ![PinGo](img/PinGo.png)
 
-PingGo is a simple ICMP exfiltration proof-of-concept tool designed for red and/or purple team tests. The tool, which consists of a separate server and client, can send a file or the contents of a directory to a target server using ICMP Echo packets (i.e., ping requests).
+PinGo is a simple ICMP exfiltration proof-of-concept tool designed for red and/or purple team tests. The tool, which consists of a separate server and client, can send a file or the contents of a directory to a target server using ICMP Echo packets (i.e., ping requests).
 
 This tool was inspired by the [ICMP-TransferTools](https://github.com/icyguider/ICMP-TransferTools/tree/main) project, and was developed using assistance from generative AI. 
 
