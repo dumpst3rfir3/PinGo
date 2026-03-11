@@ -80,7 +80,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("[*] WOOOOOOO! File sent. Have a nice day.")
+	fmt.Println("[*] WOOOOOOO! Sending is complete. Have a nice day.")
 }
 
 func sendDir(dirPath string) error {
