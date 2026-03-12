@@ -75,7 +75,7 @@ func main() {
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "[!] Transfer failed: %v\n", err)
 		fmt.Println(
-			"[!] Make sure you are running with elevated privileges",
+			"[!] " + commonError,
 		)
 		os.Exit(1)
 	}
@@ -103,7 +103,7 @@ func sendFile(filePath string) error {
 		blockNum       int
 		buf            []byte
 		conn           *icmp.PacketConn
-		dst            *net.IPAddr
+		dst            *net.UDPAddr
 		err            error
 		f              *os.File
 		fileNameToSend string
@@ -141,13 +141,13 @@ func sendFile(filePath string) error {
 	}
 	defer f.Close()
 
-	conn, err = icmp.ListenPacket("ip4:icmp", "0.0.0.0")
+	conn, err = icmp.ListenPacket(icmpProto, "0.0.0.0")
 	if err != nil {
 		return err
 	}
 	defer conn.Close()
 
-	dst, err = net.ResolveIPAddr("ip4", flags.targetIP)
+	dst, err = net.ResolveUDPAddr(icmpProto, flags.targetIP+":0")
 	if err != nil {
 		return err
 	}
